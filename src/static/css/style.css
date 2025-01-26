@@ -7,8 +7,8 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #f4f7f6;
-  color: #333;
+  background-color: white ;
+  color: #107AFC;
 }
 
 h1 {
@@ -19,12 +19,16 @@ h1 {
 
 /* Filters Section */
 .filters-container {
-  background-color: #eae2c6;
+  background-color: white ;
   padding: 20px;
-  border-bottom: 2px solid #eae2c6;
+  border-bottom: 2px solid #107AFC ;
   position: sticky;
   top: 0;
   z-index: 10;
+  border-color: #107AFC   ;
+  border-width: 0.2rem;
+  border-top: #107AFC   ;
+ 
 }
 
 .filters-form {
@@ -32,7 +36,8 @@ h1 {
   justify-content: space-between;
   gap: 20px;
   flex-wrap: wrap; /* Allow wrapping if necessary */
-  background-color: #eae2c6;
+  background-color: white ;
+  border: #107AFC   ;
 }
 
 .filter {
@@ -40,19 +45,20 @@ h1 {
   flex-direction: column;
   width: 180px;
   font-weight: bold;
+  margin-top: -1rem;
 }
 
 label {
   font-size: 1.2rem;
   margin-bottom: 8px;
-  color: #444;
+  color: black  ;
   
 }
 
 /* Button Styling */
 button {
-  background-color: #98d8ef;
-  color: white;
+  background-color: #107AFC   ;
+  color: white ;
   border: none;
   padding: 12px 24px;
   font-size: 1rem;
@@ -62,7 +68,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #107AFC   ;
 }
 
 /* Button Group Styling */
@@ -73,7 +79,7 @@ button:hover {
 }
 
 .button-group .btn {
-  background-color: #fff;
+  background-color: white ;
   border: 1px solid #ddd;
   padding: 8px 16px;
   font-size: 1rem;
@@ -82,7 +88,7 @@ button:hover {
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-  color: #333;
+  color: #107AFC  ;
 }
 
 .button-group .btn:hover {
@@ -90,14 +96,14 @@ button:hover {
 }
 
 .button-group .btn.active {
-  background-color: #98d8ef;
-  color: white;
+  background-color: #107AFC   ;
+  color: white ;
 }
 
 /* Apply Button */
 .apply-btn {
-  background-color: #98d8ef;
-  color: white;
+  background-color: #107AFC   ;
+  color:white ;
   border: none;
   padding: 12px 24px;
   font-size: 1rem;
@@ -107,17 +113,17 @@ button:hover {
 }
 
 .apply-btn:hover {
-  background-color: #0056b3;
+  background-color: #107AFC   ;
 }
 
 /* Selected Filters Display */
 .selected-filters {
   margin-top: 20px;
-  background-color: #f0f8ff;
+  background-color: white ;
   padding: 15px;
   border-radius: 8px;
   border: 1px solid #ddd;
-  color: #333;
+  color: #107AFC  ;
 }
 
 .selected-filters p {
@@ -126,46 +132,52 @@ button:hover {
 }
 
 .selected-filters p strong {
-  color: #98d8ef;
+  color: #107AFC  ;
 }
 
 /* Main Container */
 .main-container {
   display: flex;
-  height: 80vh;
-  padding: 20px;
-  gap: 20px;
+  height: 100vh; /* Full-screen height */
+  overflow: hidden; /* Prevent page scrolling */
 }
 
 .map {
-  flex: 2;
-  height: 100%;
-
-  border-radius: 30px;
+  margin-top: 1.2rem;
+  border-radius: 1rem;
+  flex: 0 0 40%; /* Fixed width for the map (40% of the screen) */
+  position: sticky; /* Keeps the map fixed */
+  top: 0;
+  height: 100vh; /* Full viewport height */
+  background-color: #f5f5f5; /* Optional: background color */
 }
 
 #listings {
-  flex: 3;
+  flex: 1; /* Takes the remaining width */
+  overflow-y: auto; /* Allows vertical scrolling for listings */
+  padding: 20px;
+  background-color: white; /* Matches your theme */
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Two columns for apartments */
-  gap: 20px; /* Add spacing between apartment cards */
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid layout */
+  gap: 20px;
 }
 
 /* Rental Listing Cards */
 .listing {
   background-color: #fff;
-  margin-bottom: 20px;
-  padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  justify-content: space-between; /* Ensure proper alignment */
-  height: auto; /* Adjust height dynamically based on content */
+  
 }
+.listing-image {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+} 
 
 .listing:hover {
   transform: translateY(-5px);
@@ -179,13 +191,13 @@ button:hover {
 }
 
 .listing p {
-  color: #777;
+  color: #107AFC  ;
   
   
 }
 
 .listing .price {
-  color: #98d8ef;
+  color: #107AFC  ;
   font-weight: bold;
   font-size: 1.2rem;
 }
@@ -215,9 +227,9 @@ button:hover {
 }
 
 .dropdown-btn {
-  background-color: #98d8ef;
+  background-color: #107AFC   ;
   color: white;
-  border: none;
+  border-color: #107AFC   ;
   padding: 12px 24px;
   font-size: 1rem;
   border-radius: 5px;
@@ -227,15 +239,16 @@ button:hover {
 }
 
 .dropdown-btn:hover {
-  background-color: #0056b3;
+  background-color: #107AFC   ;
 }
 
 .dropdown-options {
   display: none; /* Initially hidden */
   position: absolute;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white ;
+  box-shadow: 0 4px 8px  #107AFC  ;;
   z-index: 1000;
+  border-color: #107AFC   ;
   margin-top: 5px;
   border-radius: 5px;
   width: 100%;
@@ -244,8 +257,8 @@ button:hover {
 .dropdown-options .btn {
   padding: 10px 20px;
   border: none;
-  background-color: white;
-  color: black;
+  background-color: white ;
+  color: #107AFC  ;
   cursor: pointer;
   text-align: left;
   width: 100%;
@@ -271,7 +284,7 @@ button:hover {
   display: block;
   font-size: 1.2rem;
   margin-top: 10px;
-  color: #333;
+  color: black  ;
 }
 
 
@@ -285,8 +298,8 @@ button:hover {
 }
 
 #locations-options button {
-  background-color: #98d8ef;
-  color: white;
+  background-color: #107AFC   ;
+  color: white ;
   border: none;
   padding: 8px 12px;
   font-size: 1rem;
@@ -296,7 +309,7 @@ button:hover {
 }
 
 #locations-options button:hover {
-  background-color: #0056b3;
+  background-color: #107AFC   ;
 }
 
 .sliders {
@@ -306,6 +319,9 @@ button:hover {
   align-items: center;
   width: 700%; /* Ensure full-width usage */
   margin: 0 auto; /* Center the container */
+  color: #107AFC  ;
+  
+
 }
 
 .slider-group {
@@ -315,22 +331,28 @@ button:hover {
   flex: 1; /* Equal width for each group */
   max-width: 100%; /* Adjust max width to avoid overflow */
   text-align: center;
+  color: #107AFC  ;
+  
 }
 
 .slider-group label {
   font-size: 1rem;
   font-weight: lighter;
-  color: #444;
+  color: black  ;
   margin-bottom: 5px;
+  
+  
 }
 
 .slider-group .slider {
   width: 90%; /* Ensure sliders do not overflow */
+  color: #107AFC  ;
+  
 }
 
 .slider-group span {
   font-weight: bold;
-  color: #98d8ef;
+  color: #107AFC  ;
   margin-top: 5px;
 }
 @media (max-width: 768px) {
@@ -341,12 +363,13 @@ button:hover {
   }
 
   .slider-group {
+    color: #107AFC  ;
     width: 40%; /* Ensure each group takes the full width */
   }
 }
 
 .label-text{
-    margin-top: 10%;
+    margin-top: 20%;
   font-size: 1.2rem;
   font-weight: bold;
   margin-right: 20px; /* Add spacing between the label and sliders */
@@ -354,11 +377,11 @@ button:hover {
 }
 
 .listing {
-  background-color: #fff;
+  background-color: white ;
   margin-bottom: 20px;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px  #107AFC  ;;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -369,7 +392,7 @@ button:hover {
 
 .listing img {
   width: 100%;
-  height: auto;
+  height: 200px;
   border-radius: 8px;
   margin-bottom: 15px;
 }
@@ -382,23 +405,69 @@ button:hover {
 
 .listing p {
   margin-bottom: 8px;
-  color: #555;
+  color: black  ;
 }
 
 .listing p strong {
-  color: #333;
+  color: black;
+    ;
 }
 
 .listing .price {
-  color: #113cbc;
+  color: black  ;
   font-weight: bolder;
   font-size: 1.2rem;
 }
 
 .listing .address {
-  color: #777;
+  color: black  ;
   font-size: 0.9rem;
 }
 
+
+
+.project-container {
+  background: #107AFC   ; /* Glassmorphism effect */
+  border-radius: 20px;
+  padding: 20px 40px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.project-title {
+  font-size: 3rem;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-image {
+  position: relative;
+  width: 30%;
+  height: 20%;
+  align-items: center ;
+  object-fit: cover; /* Ensures the image covers the container */
+  transform: translate(-50%, 0%); /* Centers the image */
+  left: 50%;
+  top:40%;
+  
+} 
+.divider {
+  width: 100%; /* Adjust the width of the line */
+  height: 4px; /* Adjust the thickness of the line */
+  background-color: #107AFC; /* Line color */
+  margin: 4px auto; /* Spacing between the logo and text */
+  border-radius: 2px; /* Optional: rounded edges */
+  
+}
 
     

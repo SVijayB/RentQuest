@@ -38,6 +38,102 @@ function initMap() {
             bedrooms: 1,
             bathrooms: 1,
         },
+        {
+            lat: 47.6192,
+            lng: -122.334,
+            title: "Cozy Studio",
+            price: "$1,500",
+            bedrooms: 1,
+            bathrooms: 1,
+        },
+        {
+            lat: 47.6192,
+            lng: -122.334,
+            title: "Cozy Studio",
+            price: "$1,500",
+            bedrooms: 1,
+            bathrooms: 1,
+        },
+        {
+            lat: 47.6192,
+            lng: -122.334,
+            title: "Cozy Studio",
+            price: "$1,500",
+            bedrooms: 1,
+            bathrooms: 1,
+        },
+        {
+            lat: 47.6192,
+            lng: -122.334,
+            title: "Cozy Studio",
+            price: "$1,500",
+            bedrooms: 1,
+            bathrooms: 1,
+        },
+        {
+            lat: 47.6192,
+            lng: -122.334,
+            title: "Cozy Studio",
+            price: "$1,500",
+            bedrooms: 1,
+            bathrooms: 1,
+        },
+        {
+            lat: 47.6192,
+            lng: -122.334,
+            title: "Cozy Studio",
+            price: "$1,500",
+            bedrooms: 1,
+            bathrooms: 1,
+        },
+        {
+            lat: 47.6192,
+            lng: -122.334,
+            title: "Cozy Studio",
+            price: "$1,500",
+            bedrooms: 1,
+            bathrooms: 1,
+        },
+        {
+            lat: 47.6192,
+            lng: -122.334,
+            title: "Cozy Studio",
+            price: "$1,500",
+            bedrooms: 1,
+            bathrooms: 1,
+        },
+        {
+            lat: 47.6192,
+            lng: -122.334,
+            title: "Cozy Studio",
+            price: "$1,500",
+            bedrooms: 1,
+            bathrooms: 1,
+        },
+        {
+            lat: 47.6192,
+            lng: -122.334,
+            title: "Cozy Studio",
+            price: "$1,500",
+            bedrooms: 1,
+            bathrooms: 1,
+        },
+        {
+            lat: 47.6192,
+            lng: -122.334,
+            title: "Cozy Studio",
+            price: "$1,500",
+            bedrooms: 1,
+            bathrooms: 1,
+        },
+        {
+            lat: 47.6192,
+            lng: -122.334,
+            title: "Cozy Studio",
+            price: "$1,500",
+            bedrooms: 1,
+            bathrooms: 1,
+        },
     ];
 
     updateRentalListings(properties);
@@ -50,10 +146,10 @@ function validateLocations() {
     const officeAddress = document.getElementById("location-2").value.trim();
     const friendsAddress = document.getElementById("location-3").value.trim();
 
-    if (!houseAddress || !officeAddress || !friendsAddress) {
-        alert("Please enter all three locations.");
-        return null;
-    }
+    /*if (!houseAddress || !officeAddress || !friendsAddress) {
+    alert("Please enter all three locations.");
+    return null;
+  }*/
 
     return {
         house: houseAddress,
@@ -229,6 +325,7 @@ setupDropdown("locations-button", "locations-options", (value) => {
 });
 
 setupSliders([
+    { id: "transportation-weight", displayId: "transportation-value" },
     { id: "amenities-weight", displayId: "amenities-value" },
     { id: "safety-weight", displayId: "safety-value" },
     { id: "neighborhood-weight", displayId: "neighborhood-value" },
@@ -250,10 +347,10 @@ document.getElementById("filters-form").addEventListener("submit", (event) => {
     event.preventDefault();
 
     const locations = saveLocations();
-    if (!locations) {
-        alert("Please set all three locations before applying filters.");
-        return;
-    }
+    /*if (!locations) {
+    alert("Please set all three locations before applying filters.");
+    return;
+  }*/
 
     const filters = {
         price: document.getElementById("price-button").textContent.trim(),
@@ -264,6 +361,7 @@ document.getElementById("filters-form").addEventListener("submit", (event) => {
     };
 
     const weights = getWeightValues([
+        { id: "transportation-weight" },
         { id: "amenities-weight" },
         { id: "safety-weight" },
         { id: "neighborhood-weight" },
@@ -275,7 +373,8 @@ document.getElementById("filters-form").addEventListener("submit", (event) => {
     sendToBackend(
         "/api/ranking",
         payload,
-        "Filters and locations saved! Suggestions will update."
+        "Filters and locations saved! Suggestions will update.",
+        "Failed to process filters and locations."
     );
 });
 
