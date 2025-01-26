@@ -1,0 +1,404 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f7f6;
+  color: #333;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* Filters Section */
+.filters-container {
+  background-color: #eae2c6;
+  padding: 20px;
+  border-bottom: 2px solid #eae2c6;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.filters-form {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap; /* Allow wrapping if necessary */
+  background-color: #eae2c6;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  width: 180px;
+  font-weight: bold;
+}
+
+label {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #444;
+  
+}
+
+/* Button Styling */
+button {
+  background-color: #98d8ef;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Button Group Styling */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.button-group .btn {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 8px 16px;
+  font-size: 1rem;
+  text-align: center;
+  width: 60px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  color: #333;
+}
+
+.button-group .btn:hover {
+  background-color: #f0f8ff;
+}
+
+.button-group .btn.active {
+  background-color: #98d8ef;
+  color: white;
+}
+
+/* Apply Button */
+.apply-btn {
+  background-color: #98d8ef;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.apply-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Selected Filters Display */
+.selected-filters {
+  margin-top: 20px;
+  background-color: #f0f8ff;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  color: #333;
+}
+
+.selected-filters p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.selected-filters p strong {
+  color: #98d8ef;
+}
+
+/* Main Container */
+.main-container {
+  display: flex;
+  height: 80vh;
+  padding: 20px;
+  gap: 20px;
+}
+
+.map {
+  flex: 2;
+  height: 100%;
+
+  border-radius: 30px;
+}
+
+#listings {
+  flex: 3;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Two columns for apartments */
+  gap: 20px; /* Add spacing between apartment cards */
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Rental Listing Cards */
+.listing {
+  background-color: #fff;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  justify-content: space-between; /* Ensure proper alignment */
+  height: auto; /* Adjust height dynamically based on content */
+}
+
+.listing:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.listing h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.listing p {
+  color: #777;
+  
+  
+}
+
+.listing .price {
+  color: #98d8ef;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .map {
+    height: 400px;
+    margin-right: 0;
+  }
+
+  #listings {
+    margin-top: 20px;
+  }
+}
+
+/* Dropdown Styles */
+/* Dropdown Container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.dropdown-btn {
+  background-color: #98d8ef;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+
+.dropdown-btn:hover {
+  background-color: #0056b3;
+}
+
+.dropdown-options {
+  display: none; /* Initially hidden */
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  margin-top: 5px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.dropdown-options .btn {
+  padding: 10px 20px;
+  border: none;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+
+.dropdown-options .btn:hover {
+  background-color: #f0f8ff;
+}
+
+/* Locations Filter */
+#locations-options {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  padding: 10px;
+  border-radius: 5px;
+  width: 300px;
+}
+
+#locations-options label {
+  display: block;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #333;
+}
+
+
+#locations-options input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#locations-options button {
+  background-color: #98d8ef;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+#locations-options button:hover {
+  background-color: #0056b3;
+}
+
+.sliders {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; /* Evenly distribute the sliders */
+  align-items: center;
+  width: 700%; /* Ensure full-width usage */
+  margin: 0 auto; /* Center the container */
+}
+
+.slider-group {
+  display: flex;
+  flex-direction: column; /* Stack label, slider, and value vertically */
+  align-items: center;
+  flex: 1; /* Equal width for each group */
+  max-width: 100%; /* Adjust max width to avoid overflow */
+  text-align: center;
+}
+
+.slider-group label {
+  font-size: 1rem;
+  font-weight: lighter;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+.slider-group .slider {
+  width: 90%; /* Ensure sliders do not overflow */
+}
+
+.slider-group span {
+  font-weight: bold;
+  color: #98d8ef;
+  margin-top: 5px;
+}
+@media (max-width: 768px) {
+  .sliders {
+    flex-direction: column; /* Stack sliders vertically on smaller screens */
+    gap: 20px; /* Add spacing between slider groups */
+    width: 100%
+  }
+
+  .slider-group {
+    width: 40%; /* Ensure each group takes the full width */
+  }
+}
+
+.label-text{
+    margin-top: 10%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-right: 20px; /* Add spacing between the label and sliders */
+  white-space: nowrap; /* Ensure the text does not wrap to the next line */
+}
+
+.listing {
+  background-color: #fff;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.listing:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.listing img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.listing h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.listing p {
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.listing p strong {
+  color: #333;
+}
+
+.listing .price {
+  color: #113cbc;
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+
+.listing .address {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+
+    
