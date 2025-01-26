@@ -23,6 +23,7 @@ function initMap() {
             bedrooms: 2,
             bathrooms: 1,
             address: "712 Summit Ave E, Seattle, WA, 98102",
+            parking_cost: "$30",
             imageUrl:
                 "http://ar.rdcpix.com/e1cabee4f23d4ea4b9450da19f0170aac-f3086237359od-w480_h360_x2.webp?w=1080&q=75",
         },
@@ -35,6 +36,7 @@ function initMap() {
             bedrooms: 2,
             bathrooms: 1,
             address: "2210 Franklin Ave E, Seattle, WA, 98102",
+            parking_cost: "$50",
             imageUrl:
                 "http://ar.rdcpix.com/97d43a0ad5503ab6099cb4db3de06d63c-f214232889od-w480_h360_x2.webp?w=1080&q=75",
         },
@@ -47,6 +49,7 @@ function initMap() {
             bedrooms: 2,
             bathrooms: 1,
             address: "264 E Newton St Unit B, Seattle, WA, 98102",
+            parking_cost: "$40",
             imageUrl:
                 "http://ap.rdcpix.com/0c3c48ea216a0f6b4f9dbaa285dfa017l-b2068018714od-w480_h360_x2.webp?w=1080&q=75",
         },
@@ -205,10 +208,11 @@ function updateMapPins(rentals) {
 
             // Set content for info window
             infoWindow.setContent(`
-                <div>
-                    <h3>${rental.title}</h3>
+                <div class="info-window">
+                    <h3 class="info-header">${rental.title}</h3>
                     <p>Bedrooms: ${rental.bedrooms}</p>
                     <p>Bathrooms: ${rental.bathrooms}</p>
+                    <p>Parking: ${rental.parking_cost}</p>
                     <p>Price: ${rental.price}</p>
                     <iframe 
                         width="300" 
