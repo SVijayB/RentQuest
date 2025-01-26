@@ -1,8 +1,8 @@
-# Repo-Template
+# RentQuest (Team 3)
 
 <p align="center">
     <img src="assets/Logo.png" alt="Logo" border="0">
-    <br>Short description of the project
+    <br>Find your place, love your space <3
 </p>
 
 ---
