@@ -21,14 +21,24 @@ h1 {
 .filters-container {
   background-color: white ;
   padding: 20px;
-  border-bottom: 2px solid #107AFC ;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  border-color: #107AFC   ;
-  border-width: 0.2rem;
-  border-top: #107AFC   ;
+  border-radius: 10px;
+  
+  box-shadow: 0 4px 8px #107AFC;
  
+  position: sticky;
+  
+  z-index: 10;
+
+  border-width: 0.2rem;
+  margin-left: 1rem;
+  
+  
+  
+ 
+}
+.filters-container:hover {
+  transform: translateY(-5px);
+  
 }
 
 .filters-form {
@@ -38,6 +48,8 @@ h1 {
   flex-wrap: wrap; /* Allow wrapping if necessary */
   background-color: white ;
   border: #107AFC   ;
+  margin-top: 0.4rem;
+  
 }
 
 .filter {
@@ -463,9 +475,8 @@ button:hover {
 } 
 .divider {
   width: 100%; /* Adjust the width of the line */
-  height: 4px; /* Adjust the thickness of the line */
-  background-color: #107AFC; /* Line color */
-  margin: 4px auto; /* Spacing between the logo and text */
+  height: 2px; /* Adjust the thickness of the line */
+  margin: 2px auto; /* Spacing between the logo and text */
   border-radius: 2px; /* Optional: rounded edges */
   
 }

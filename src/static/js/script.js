@@ -15,124 +15,40 @@ function initMap() {
     // Initial properties
     const properties = [
         {
-            lat: 47.6097,
-            lng: -122.3331,
-            title: "Luxury Condo",
-            price: "$2,000",
+            url: "https://www.realtor.com/realestateandhomes-detail/M1702738037?listing_status=rental",
+            lat: 47.625551,
+            lng: -122.324956,
+            title: "712 Summit Ave E",
+            price: "$2,250",
             bedrooms: 2,
-            bathrooms: 2,
-        },
-        {
-            lat: 47.6132,
-            lng: -122.3333,
-            title: "Modern Apartment",
-            price: "$2,500",
-            bedrooms: 3,
-            bathrooms: 2,
-        },
-        {
-            lat: 47.6192,
-            lng: -122.334,
-            title: "Cozy Studio",
-            price: "$1,500",
-            bedrooms: 1,
             bathrooms: 1,
+            address: "712 Summit Ave E, Seattle, WA, 98102",
+            imageUrl:
+                "http://ar.rdcpix.com/e1cabee4f23d4ea4b9450da19f0170aac-f3086237359od-w480_h360_x2.webp?w=1080&q=75",
         },
         {
-            lat: 47.6192,
-            lng: -122.334,
-            title: "Cozy Studio",
-            price: "$1,500",
-            bedrooms: 1,
+            url: "https://www.realtor.com/realestateandhomes-detail/M1149503599?listing_status=rental",
+            lat: 47.638576,
+            lng: -122.324334,
+            title: "2210 Franklin Ave E",
+            price: "$2,100",
+            bedrooms: 2,
             bathrooms: 1,
+            address: "2210 Franklin Ave E, Seattle, WA, 98102",
+            imageUrl:
+                "http://ar.rdcpix.com/97d43a0ad5503ab6099cb4db3de06d63c-f214232889od-w480_h360_x2.webp?w=1080&q=75",
         },
         {
-            lat: 47.6192,
-            lng: -122.334,
-            title: "Cozy Studio",
-            price: "$1,500",
-            bedrooms: 1,
+            url: "https://www.realtor.com/realestateandhomes-detail/M9189027013?listing_status=rental",
+            lat: 47.636921,
+            lng: -122.323936,
+            title: "264 E Newton St Unit B",
+            price: "$2,298",
+            bedrooms: 2,
             bathrooms: 1,
-        },
-        {
-            lat: 47.6192,
-            lng: -122.334,
-            title: "Cozy Studio",
-            price: "$1,500",
-            bedrooms: 1,
-            bathrooms: 1,
-        },
-        {
-            lat: 47.6192,
-            lng: -122.334,
-            title: "Cozy Studio",
-            price: "$1,500",
-            bedrooms: 1,
-            bathrooms: 1,
-        },
-        {
-            lat: 47.6192,
-            lng: -122.334,
-            title: "Cozy Studio",
-            price: "$1,500",
-            bedrooms: 1,
-            bathrooms: 1,
-        },
-        {
-            lat: 47.6192,
-            lng: -122.334,
-            title: "Cozy Studio",
-            price: "$1,500",
-            bedrooms: 1,
-            bathrooms: 1,
-        },
-        {
-            lat: 47.6192,
-            lng: -122.334,
-            title: "Cozy Studio",
-            price: "$1,500",
-            bedrooms: 1,
-            bathrooms: 1,
-        },
-        {
-            lat: 47.6192,
-            lng: -122.334,
-            title: "Cozy Studio",
-            price: "$1,500",
-            bedrooms: 1,
-            bathrooms: 1,
-        },
-        {
-            lat: 47.6192,
-            lng: -122.334,
-            title: "Cozy Studio",
-            price: "$1,500",
-            bedrooms: 1,
-            bathrooms: 1,
-        },
-        {
-            lat: 47.6192,
-            lng: -122.334,
-            title: "Cozy Studio",
-            price: "$1,500",
-            bedrooms: 1,
-            bathrooms: 1,
-        },
-        {
-            lat: 47.6192,
-            lng: -122.334,
-            title: "Cozy Studio",
-            price: "$1,500",
-            bedrooms: 1,
-            bathrooms: 1,
-        },
-        {
-            lat: 47.6192,
-            lng: -122.334,
-            title: "Cozy Studio",
-            price: "$1,500",
-            bedrooms: 1,
-            bathrooms: 1,
+            address: "264 E Newton St Unit B, Seattle, WA, 98102",
+            imageUrl:
+                "http://ap.rdcpix.com/0c3c48ea216a0f6b4f9dbaa285dfa017l-b2068018714od-w480_h360_x2.webp?w=1080&q=75",
         },
     ];
 
@@ -259,7 +175,9 @@ function updateRentalListings(rentals) {
         const listingElement = document.createElement("div");
         listingElement.classList.add("listing");
         listingElement.innerHTML = `
-      <img src="${rental.imageUrl}" alt="${rental.title}" class="listing-image" />
+      <a href="${rental.url}" target="_blank">
+                <img src="${rental.imageUrl}" alt="${rental.title}" class="listing-image">
+            </a>
       <h3>${rental.title}</h3>
       <p><span class="price">${rental.price}</span></p>
       <p><strong>${rental.bedrooms} Bed</strong> <strong>${rental.bathrooms} Bath</strong></p>
@@ -325,7 +243,6 @@ setupDropdown("locations-button", "locations-options", (value) => {
 });
 
 setupSliders([
-    { id: "transportation-weight", displayId: "transportation-value" },
     { id: "amenities-weight", displayId: "amenities-value" },
     { id: "safety-weight", displayId: "safety-value" },
     { id: "neighborhood-weight", displayId: "neighborhood-value" },
@@ -361,7 +278,6 @@ document.getElementById("filters-form").addEventListener("submit", (event) => {
     };
 
     const weights = getWeightValues([
-        { id: "transportation-weight" },
         { id: "amenities-weight" },
         { id: "safety-weight" },
         { id: "neighborhood-weight" },

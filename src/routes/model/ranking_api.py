@@ -57,9 +57,11 @@ def ranking_post():
         )
         bedrooms = int(row["beds"]) if pd.notna(row["beds"]) else 0
         bathrooms = float(row["bath"]) if pd.notna(row["bath"]) else 0.0
+        url = row["property_url"]
 
         final_ranking["rentals"].append(
             {
+                "url": url,
                 "lat": latitude,
                 "lng": longitude,
                 "title": (
@@ -72,7 +74,7 @@ def ranking_post():
                 "bathrooms": bathrooms,
                 "imageUrl": image_url,
                 "address": (
-                    f"{row['full_street_line']}, {row['city']}, {row['state']}"
+                    f"{row['full_street_line']}, {row['city']}, {row['state']}, {row['zip_code']}"
                     if pd.notna(row["full_street_line"])
                     else "No Address"
                 ),
