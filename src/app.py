@@ -20,7 +20,7 @@ def create_app():
 
     @app.route("/", methods=["GET"])
     def index():
-        return "<h3>API running successfully!<h3>"
+        return render_template("index.html")
 
     @app.route("/favicon.ico")
     def favicon():
