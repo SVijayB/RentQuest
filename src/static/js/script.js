@@ -175,8 +175,8 @@ function updateRentalListings(rentals) {
 
 // Update map pins
 function updateMapPins(rentals) {
-    markers.forEach((marker) => marker.setMap(null));
-    markers = [];
+    markers.forEach((marker) => marker.setMap(null)); // Clear existing markers
+    markers = []; // Reset markers array
 
     rentals.forEach((rental) => {
         const marker = new google.maps.Marker({
@@ -186,12 +186,27 @@ function updateMapPins(rentals) {
         });
 
         marker.addListener("click", () => {
+            // Construct the Street View iframe URL
+            const streetViewUrl = `https://www.google.com/maps/embed/v1/streetview?key=AIzaSyCoHWvGch-IqnyZY4KA206gEMDDe5kTCQM&location=${rental.lat},${rental.lng}&heading=210&pitch=10&fov=90`;
+
+            // Set content for info window
             infoWindow.setContent(`
-        <h3>${rental.title}</h3>
-        <p>Bedrooms: ${rental.bedrooms}</p>
-        <p>Bathrooms: ${rental.bathrooms}</p>
-        <p>Price: ${rental.price}</p>
-      `);
+                <div>
+                    <h3>${rental.title}</h3>
+                    <p>Bedrooms: ${rental.bedrooms}</p>
+                    <p>Bathrooms: ${rental.bathrooms}</p>
+                    <p>Price: ${rental.price}</p>
+                    <iframe 
+                        width="300" 
+                        height="200" 
+                        frameborder="0" 
+                        style="border:0;" 
+                        src="${streetViewUrl}" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            `);
+
             infoWindow.open(map, marker);
         });
 
